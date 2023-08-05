@@ -12,22 +12,9 @@ class AccountSummaryView implements \JsonSerializable
 
     }
 
-
-    public function toArray(): array
-    {
-        $items = [];
-        foreach ($this->accountSummary as $item) {
-            $items[] = [
-                'customerId' => (string)$item->customerId(),
-                'balances' => $item->balances(),
-                'lastInvoiceNumber' => $item->lastInvoiceNumber(),
-                'invoices' => $item->invoices()
-            ];
-        }
-
-        return $items;
-    }
-
+    /**
+     * @return array{array<mixed>}
+     */
     public function jsonSerialize(): array
     {
         $items = [];
