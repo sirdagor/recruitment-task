@@ -12,7 +12,13 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
+use Symfony\Component\Console\Attribute\AsCommand;
 
+#[AsCommand(
+    name: 'import:invoices',
+    description: 'Import Invoices.',
+    hidden: false,
+)]
 class ImportInvoicesCommand extends Command
 {
     public function __construct(
