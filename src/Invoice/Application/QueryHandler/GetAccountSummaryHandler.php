@@ -35,7 +35,7 @@ class GetAccountSummaryHandler
         $criteria = [];
         $clientId = $query->customerId();
         if (!empty($clientId)) {
-            $criteria['id'] = $clientId;
+            $criteria['id'] = $clientId->toString();
         }
 
         $customersObj = $this->customerRepository->findPaginated(

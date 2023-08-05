@@ -13,7 +13,7 @@ interface CustomerRepository
     public function save(Customer $customer): void;
 
     /**
-     * @param mixed $criteria
+     * @param string[] $criteria
      * @param int $limit
      * @param int $offset
      * @return Customer[]

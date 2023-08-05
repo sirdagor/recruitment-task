@@ -13,7 +13,7 @@ class AccountSummaryView implements \JsonSerializable
     }
 
     /**
-     * @return AccountSummary[]
+     * @return string[]
      */
     public function toArray(): array
     {
@@ -31,7 +31,7 @@ class AccountSummaryView implements \JsonSerializable
     }
 
     /**
-     * @return AccountSummary[]
+     * @return string[]
      */
     public function jsonSerialize(): array
     {
