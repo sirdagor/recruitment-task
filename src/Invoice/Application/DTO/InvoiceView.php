@@ -19,7 +19,7 @@ class InvoiceView implements \JsonSerializable
 
     }
 
-    public static function fromInvoice(Invoice $invoice)
+    public static function fromInvoice(Invoice $invoice): InvoiceView
     {
         $currencies = new ISOCurrencies();
         $moneyFormatter = new DecimalMoneyFormatter($currencies);
@@ -34,6 +34,9 @@ class InvoiceView implements \JsonSerializable
     }
 
 
+    /**
+     * @return string[]
+     */
     public function jsonSerialize(): array
     {
         return [

@@ -15,7 +15,7 @@ class BalanceView implements \JsonSerializable
 
     }
 
-    public static function fromPayment(Payment $payment)
+    public static function fromPayment(Payment $payment): BalanceView
     {
         $currencies = new ISOCurrencies();
         $moneyFormatter = new DecimalMoneyFormatter($currencies);
@@ -25,7 +25,9 @@ class BalanceView implements \JsonSerializable
         );
     }
 
-
+    /**
+     * @return string[]
+     */
     public function jsonSerialize(): array
     {
         return [

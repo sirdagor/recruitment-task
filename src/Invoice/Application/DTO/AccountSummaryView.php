@@ -9,6 +9,9 @@ class AccountSummaryView implements \JsonSerializable
 
     }
 
+    /**
+     * @return string[]
+     */
     public function toArray(): array
     {
         $items = [];
@@ -24,6 +27,9 @@ class AccountSummaryView implements \JsonSerializable
         return $items;
     }
 
+    /**
+     * @return string[]
+     */
     public function jsonSerialize(): array
     {
         $items = [];
