@@ -1,0 +1,41 @@
+{
+  "customerId": "720d0232-39e7-411b-b7f8-03bb88494b31",
+  "balances": [
+    {
+      "amount": "1362.72",
+      "currency": "PLN"
+    },
+    {
+      "amount": "4045.65",
+      "currency": "PLN"
+    },
+    {
+      "amount": "1536.10",
+      "currency": "PLN"
+    }
+  ],
+  "lastInvoiceNumber": "DP\/2010\/03\/08\/39211069",
+  "invoices": [
+    {
+      "id": "057b189e-2920-465d-9d12-807f5f884dcb",
+      "nett": "1107.90",
+      "gross": "1362.72",
+      "tax": "254.82",
+      "currency": "PLN"
+    },
+    {
+      "id": "32e78d1f-8fa1-46c3-9cfa-c2e1694a9b45",
+      "nett": "3289.15",
+      "gross": "4045.65",
+      "tax": "756.50",
+      "currency": "PLN"
+    },
+    {
+      "id": "7813627c-6ee7-419f-ba08-ad84f3713957",
+      "nett": "1248.85",
+      "gross": "1536.10",
+      "tax": "287.24",
+      "currency": "PLN"
+    }
+  ]
+}

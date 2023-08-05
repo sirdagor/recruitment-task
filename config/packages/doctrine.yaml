@@ -1,0 +1,24 @@
+doctrine:
+    dbal:
+        url: mysql://root:root@mysql/invoices?serverVersion=8.0.23
+        types:
+            uuid: Ramsey\Uuid\Doctrine\UuidType
+            money: App\Invoice\Infrastructure\Repository\Doctrine\Types\MoneyType
+            currency: App\Invoice\Infrastructure\Repository\Doctrine\Types\CurrencyType
+            customerId: App\Invoice\Infrastructure\Repository\Doctrine\Types\CustomerIdType
+
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            Invoice:
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Invoice/Domain/Entity'
+                prefix: 'App\Invoice\Domain\Entity'
+                alias: Invoice
+when@prod:
+    doctrine:
+        orm:
+            auto_generate_proxy_classes: false
+            proxy_dir: '%kernel.build_dir%/doctrine/orm/Proxies'

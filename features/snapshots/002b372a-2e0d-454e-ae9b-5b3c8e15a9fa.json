@@ -1,0 +1,39 @@
+[
+  {
+    "customerId": "002b372a-2e0d-454e-ae9b-5b3c8e15a9fa",
+    "balances": [
+      {
+        "amount": "3456.83",
+        "currency": "EUR"
+      },
+      {
+        "amount": "2085.06",
+        "currency": "EUR"
+      }
+    ],
+    "lastInvoiceNumber": "DP\/2022\/08\/08\/47114764",
+    "invoices": [
+      {
+        "id": "b3eccb1c-871f-4712-94e7-ff06eadbe8be",
+        "nett": "2810.43",
+        "gross": "3456.83",
+        "tax": "646.40",
+        "currency": "EUR"
+      },
+      {
+        "id": "0aad8446-29af-4cb6-b24c-cc9e2aab3fdf",
+        "nett": "890.09",
+        "gross": "1094.81",
+        "tax": "204.72",
+        "currency": "PLN"
+      },
+      {
+        "id": "7ec1d8d5-741f-44cf-8306-9b7668030c57",
+        "nett": "1695.17",
+        "gross": "2085.06",
+        "tax": "389.89",
+        "currency": "EUR"
+      }
+    ]
+  }
+]

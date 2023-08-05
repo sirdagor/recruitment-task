@@ -1,0 +1,4 @@
+add_invoices:
+    path: /api/customers/balances
+    methods: ['GET']
+    controller: App\Invoice\UserInterface\Http\CustomerController

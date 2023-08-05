@@ -1,0 +1,85 @@
+openapi: 3.0.3
+info:
+  title: Customer Account API
+  version: 1.0.0
+servers:
+  - url: http://localhost
+paths:
+  /api/customers/balances:
+    get:
+      summary: Get Account Summary for a Customers
+      description: Retrieves the account summary for customers
+      parameters:
+        - name: customerId
+          in: query
+          description: ID of the customer whose account summary is to be retrieved.
+          required: true
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Limit of customers that you will get (Default 20)
+          required: false
+          schema:
+            type: string
+        - name: offset
+          in: query
+          description: Used to get next page of the results
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with the account summary data.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    customerId:
+                      type: string
+                      description: ID of the customer.
+                    balances:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          amount:
+                            type: string
+                            format: float
+                            description: Balance amount in the specified currency.
+                          currency:
+                            type: string
+                            description: Currency code (e.g., PLN).
+                    lastInvoiceNumber:
+                      type: string
+                      description: Last invoice number with a specific pattern.
+                    invoices:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            description: Invoice ID.
+                          nett:
+                            type: string
+                            format: float
+                            description: Nett amount in the specified currency.
+                          gross:
+                            type: string
+                            format: float
+                            description: Gross amount in the specified currency.
+                          tax:
+                            type: string
+                            format: float
+                            description: Tax amount in the specified currency.
+                          currency:
+                            type: string
+                            description: Currency code (e.g., PLN).
+        '400':
+          description: Customer not found.
+        '500':
+          description: Internal server error.

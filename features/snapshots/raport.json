@@ -1,0 +1,99 @@
+[
+  {
+    "customerId": "002b372a-2e0d-454e-ae9b-5b3c8e15a9fa",
+    "balances": [
+      {
+        "amount": "3456.83",
+        "currency": "EUR"
+      },
+      {
+        "amount": "2085.06",
+        "currency": "EUR"
+      }
+    ],
+    "lastInvoiceNumber": "DP\/2022\/08\/08\/47114764",
+    "invoices": [
+      {
+        "id": "b3eccb1c-871f-4712-94e7-ff06eadbe8be",
+        "nett": "2810.43",
+        "gross": "3456.83",
+        "tax": "646.40",
+        "currency": "EUR"
+      },
+      {
+        "id": "0aad8446-29af-4cb6-b24c-cc9e2aab3fdf",
+        "nett": "890.09",
+        "gross": "1094.81",
+        "tax": "204.72",
+        "currency": "PLN"
+      },
+      {
+        "id": "7ec1d8d5-741f-44cf-8306-9b7668030c57",
+        "nett": "1695.17",
+        "gross": "2085.06",
+        "tax": "389.89",
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "customerId": "8d741657-5322-4f44-860a-9450bc00f4d8",
+    "balances": [
+      {
+        "amount": "2667.03",
+        "currency": "PLN"
+      }
+    ],
+    "lastInvoiceNumber": "",
+    "invoices": []
+  },
+  {
+    "customerId": "ce962250-2b34-4b87-a4a6-9a68df5c957d",
+    "balances": [
+      {
+        "amount": "2371.16",
+        "currency": "PLN"
+      }
+    ],
+    "lastInvoiceNumber": "",
+    "invoices": []
+  },
+  {
+    "customerId": "fea1b900-cf3f-4112-95c3-d0019e626712",
+    "balances": [
+      {
+        "amount": "1012.25",
+        "currency": "EUR"
+      }
+    ],
+    "lastInvoiceNumber": "DP\/2000\/03\/04\/44863393",
+    "invoices": [
+      {
+        "id": "382a23b7-6a1a-4871-9da7-b8f1d22cc1a2",
+        "nett": "822.97",
+        "gross": "1012.25",
+        "tax": "189.28",
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "customerId": "fedbcfc1-2b87-4a57-99c7-ad02b120d057",
+    "balances": [
+      {
+        "amount": "3815.78",
+        "currency": "EUR"
+      }
+    ],
+    "lastInvoiceNumber": "DP\/2004\/07\/04\/94493095",
+    "invoices": [
+      {
+        "id": "bb9163d4-8ded-4077-bd07-77f8506c76d3",
+        "nett": "3102.26",
+        "gross": "3815.78",
+        "tax": "713.52",
+        "currency": "EUR"
+      }
+    ]
+  }
+]

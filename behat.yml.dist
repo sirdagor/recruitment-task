@@ -1,0 +1,8 @@
+
+default:
+    suites:
+        app:
+            contexts:
+                - App\Tests\Behat\AppContext
+    extensions:
+        FriendsOfBehat\SymfonyExtension: null

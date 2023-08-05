@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+    mysql:
+        image: mysql:8.0.33
+        ports:
+            - 8210:3306
+        environment:
+            MYSQL_DATABASE: invoices
+            MYSQL_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: root
+    php:
+        build:
+            context: .docker/php
+            args:
+                TIMEZONE: ${TIMEZONE}
+        depends_on:
+            - mysql
+        volumes:
+            - ../:/var/www/recruitment-task:cached
+            - app_var:/var/www/recruitment-task/var
+            - app_vendor:/var/www/recruitment-task/vendor
+    nginx:
+        build:
+            context: .docker/nginx
+        volumes:
+            - ../:/var/www/recruitment-task:cached
+            - app_var:/var/www/recruitment-task/var
+            - app_vendor:/var/www/recruitment-task/vendor
+        depends_on:
+            - php
+        ports:
+            - 80:80
+        env_file:
+            - .docker/.env.nginx.local
+
+volumes:
+    app_var:
+    app_vendor:
+    db_app:
