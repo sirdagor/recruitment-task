@@ -31,7 +31,7 @@ class AddPaymentHandler
             $payment = new Payment(
                 Uuid::fromString($paymentArray[0]),
                 $currency,
-                new Money(intval($paymentArray[2] * 100), $currency),
+                new Money(intval(floatval($paymentArray[2]) * 100), $currency),
                 new CustomerId(Uuid::fromString($paymentArray[3])),
             );
             $this->paymentRepository->save($payment);

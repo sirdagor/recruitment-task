@@ -6,13 +6,16 @@ namespace App\Invoice\Application\Command;
 
 class AddPayment
 {
+    /**
+     * @param string[] $paymentArray
+     */
     public function __construct(
         private readonly array $paymentArray
     ) {
     }
 
     /**
-     * @return mixed
+     * @return string[]
      */
     public function paymentArray(): array
     {

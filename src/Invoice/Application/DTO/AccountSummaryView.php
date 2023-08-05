@@ -4,13 +4,16 @@ namespace App\Invoice\Application\DTO;
 
 class AccountSummaryView implements \JsonSerializable
 {
+    /**
+     * @param AccountSummary[] $accountSummary
+     */
     public function __construct(private readonly array $accountSummary)
     {
 
     }
 
     /**
-     * @return string[]
+     * @return AccountSummary[]
      */
     public function toArray(): array
     {
@@ -28,7 +31,7 @@ class AccountSummaryView implements \JsonSerializable
     }
 
     /**
-     * @return string[]
+     * @return AccountSummary[]
      */
     public function jsonSerialize(): array
     {

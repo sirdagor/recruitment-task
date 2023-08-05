@@ -35,9 +35,9 @@ class AddInvoiceHandler
                 Type::tryFrom($invoiceArray[1]),
                 new CustomerId(Uuid::fromString($invoiceArray[2])),
                 $invoiceArray[3],
-                new Money(intval($invoiceArray[4] * 100), $currency),
-                new Money(intval($invoiceArray[5] * 100), $currency),
-                new Money(intval($invoiceArray[6] * 100), $currency),
+                new Money(intval(floatval($invoiceArray[4]) * 100), $currency),
+                new Money(intval(floatval($invoiceArray[5]) * 100), $currency),
+                new Money(intval(floatval($invoiceArray[6]) * 100), $currency),
                 $currency,
                 new \DateTimeImmutable($invoiceArray[8])
             );
