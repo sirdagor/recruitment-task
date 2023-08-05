@@ -25,11 +25,8 @@ class DoctrineInvoiceRepository extends ServiceEntityRepository implements Invoi
     public function save(Invoice $invoice): void
     {
         $manager = $this->registry->getManager();
-        if (!$manager->isOpen()) {
-            $manager = $manager->create(
-                $manager->getConnection(),
-                $manager->getConfiguration()
-            );
+        if ($manager->isOpen() === false) {
+            $manager = $this->registry->resetManager();
         }
         $manager->persist($invoice);
         $manager->flush();
@@ -52,6 +49,6 @@ class DoctrineInvoiceRepository extends ServiceEntityRepository implements Invoi
     {
         return $this->findBy([
             'type' => $type
-        ]) ?? throw new ObjectNotFoundException();
+        ]);
     }
 }

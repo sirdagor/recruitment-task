@@ -56,4 +56,4 @@ php-cs:
 	docker-compose run --rm --no-deps php bash -c "tools/php-cs-fixer/vendor/bin/php-cs-fixer src"
 
 php-stan-analise:
-	docker run --rm -v "$(PWD)":/app --entrypoint="/bin/sh" ghcr.io/phpstan/phpstan:latest-php8.2 -c "composer global require phpstan/phpstan-phpunit; composer global require  phpstan/phpstan-symfony; phpstan analyse"
+	docker-compose ${TEST_COMPOSE_FILES} run --rm --no-deps php sh -c 'vendor/bin/phpstan analyse src'

@@ -55,7 +55,7 @@ class Payment
 
 
     /**
-     * @return Uuid
+     * @return UuidInterface
      */
     public function id(): UuidInterface
     {

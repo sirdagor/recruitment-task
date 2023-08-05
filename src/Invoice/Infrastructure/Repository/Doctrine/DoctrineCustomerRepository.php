@@ -21,11 +21,8 @@ class DoctrineCustomerRepository extends ServiceEntityRepository implements Cust
     public function save(Customer $customer): void
     {
         $manager = $this->registry->getManager();
-        if (!$manager->isOpen()) {
-            $manager = $manager->create(
-                $manager->getConnection(),
-                $manager->getConfiguration()
-            );
+        if ($manager->isOpen() === false) {
+            $manager = $this->registry->resetManager();
         }
         $existingCustomer = $this->findOneBy(['id' => $customer->id()->toString()]);
         if (!$existingCustomer) {
@@ -36,6 +33,6 @@ class DoctrineCustomerRepository extends ServiceEntityRepository implements Cust
 
     public function findPaginated(array $criteria, int $limit, int $offset): array
     {
-        return $this->findBy($criteria, null, $limit, $offset) ?? throw new ObjectNotFoundException();
+        return $this->findBy($criteria, null, $limit, $offset);
     }
 }

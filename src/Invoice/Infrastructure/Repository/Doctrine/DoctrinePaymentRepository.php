@@ -23,11 +23,8 @@ class DoctrinePaymentRepository extends ServiceEntityRepository implements Payme
     public function save(Payment $payment): void
     {
         $manager = $this->registry->getManager();
-        if (!$manager->isOpen()) {
-            $manager = $manager->create(
-                $manager->getConnection(),
-                $manager->getConfiguration()
-            );
+        if ($manager->isOpen() === false) {
+            $manager = $this->registry->resetManager();
         }
         $manager->persist($payment);
         $manager->flush();
@@ -37,6 +34,6 @@ class DoctrinePaymentRepository extends ServiceEntityRepository implements Payme
     {
         return $this->findBy([
             'customerId' => $customerId->customerId()->toString(),
-        ]) ?? throw new ObjectNotFoundException();
+        ]);
     }
 }

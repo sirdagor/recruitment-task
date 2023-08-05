@@ -145,7 +145,7 @@ class Invoice
     }
 
     /**
-     * @return int
+     * @return Money
      */
     public function taxAmount(): Money
     {

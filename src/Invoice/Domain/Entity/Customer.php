@@ -18,11 +18,17 @@ class Customer
     #[Column(name: "id", type: "customerId", length: 36, unique: true, nullable: false, options: ["fixed" => true])]
     private CustomerId $id;
 
+    /**
+     * @param CustomerId $id
+     */
     public function __construct(CustomerId $id)
     {
         $this->id = $id;
     }
 
+    /**
+     * @return CustomerId
+     */
     public function id(): CustomerId
     {
         return $this->id;
