@@ -12,5 +12,11 @@ interface CustomerRepository
 {
     public function save(Customer $customer): void;
 
+    /**
+     * @param mixed $criteria
+     * @param int $limit
+     * @param int $offset
+     * @return Customer[]
+     */
     public function findPaginated(array $criteria, int $limit, int $offset): array;
 }

@@ -33,7 +33,7 @@ class DoctrineCustomerRepository extends ServiceEntityRepository implements Cust
     }
 
     /**
-     * @param string[] $criteria
+     * @param mixed $criteria
      * @param int $limit
      * @param int $offset
      * @return Customer[]

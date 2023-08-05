@@ -6,6 +6,12 @@ use App\Invoice\Domain\Entity\CustomerId;
 
 class AccountSummary
 {
+    /**
+     * @param CustomerId $customerId
+     * @param string $lastInvoiceNumber
+     * @param BalanceView[] $balances
+     * @param InvoiceView[] $invoices
+     */
     public function __construct(
         private readonly CustomerId $customerId,
         private readonly string $lastInvoiceNumber,
@@ -15,13 +21,16 @@ class AccountSummary
     }
 
     /**
-     * @return array
+     * @return InvoiceView[]
      */
     public function invoices(): array
     {
         return $this->invoices;
     }
 
+    /**
+     * @return BalanceView[]
+     */
     public function balances(): array
     {
         return $this->balances;
