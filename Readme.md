@@ -1,6 +1,6 @@
-# Project Name Readme
+# Invoices Readme
 
-This repository contains the source code for the **Project Name** application. It provides a set of Docker-based commands to initialize, run, and test the application. The application is built using PHP and Symfony.
+This repository contains the source code for the **Invoices** application. It provides a set of Docker-based commands to initialize, run, and test the application. The application is built using PHP and Symfony.
 
 ## Prerequisites
 
