@@ -22,6 +22,7 @@ class DoctrinePaymentRepository extends ServiceEntityRepository implements Payme
 
     public function save(Payment $payment): void
     {
+        /** @var \Doctrine\ORM\EntityManagerInterface */
         $manager = $this->registry->getManager();
         if ($manager->isOpen() === false) {
             $manager = $this->registry->resetManager();

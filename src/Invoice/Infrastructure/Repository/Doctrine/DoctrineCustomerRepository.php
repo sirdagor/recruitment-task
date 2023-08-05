@@ -20,6 +20,7 @@ class DoctrineCustomerRepository extends ServiceEntityRepository implements Cust
 
     public function save(Customer $customer): void
     {
+        /** @var \Doctrine\ORM\EntityManagerInterface */
         $manager = $this->registry->getManager();
         if ($manager->isOpen() === false) {
             $manager = $this->registry->resetManager();
@@ -31,6 +32,12 @@ class DoctrineCustomerRepository extends ServiceEntityRepository implements Cust
         }
     }
 
+    /**
+     * @param array $criteria
+     * @param int $limit
+     * @param int $offset
+     * @return Customer[]
+     */
     public function findPaginated(array $criteria, int $limit, int $offset): array
     {
         return $this->findBy($criteria, null, $limit, $offset);

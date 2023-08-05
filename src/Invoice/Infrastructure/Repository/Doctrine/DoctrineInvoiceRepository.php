@@ -24,6 +24,7 @@ class DoctrineInvoiceRepository extends ServiceEntityRepository implements Invoi
 
     public function save(Invoice $invoice): void
     {
+        /** @var \Doctrine\ORM\EntityManagerInterface */
         $manager = $this->registry->getManager();
         if ($manager->isOpen() === false) {
             $manager = $this->registry->resetManager();
@@ -31,7 +32,9 @@ class DoctrineInvoiceRepository extends ServiceEntityRepository implements Invoi
         $manager->persist($invoice);
         $manager->flush();
     }
-
+    /**
+     * @return Invoice[]
+     */
     public function getByCustomerIdAndType(CustomerId $customerId, Type $type): array
     {
         return $this->findBy(
@@ -42,13 +45,6 @@ class DoctrineInvoiceRepository extends ServiceEntityRepository implements Invoi
             [
                 'createdAt' => 'asc'
             ]
-        ) ?? throw new ObjectNotFoundException();
-    }
-
-    public function getByType(Type $type): array
-    {
-        return $this->findBy([
-            'type' => $type
-        ]);
+        );
     }
 }
