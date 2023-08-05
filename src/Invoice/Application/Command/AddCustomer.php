@@ -10,7 +10,7 @@ class AddCustomer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function customerId(): string
     {

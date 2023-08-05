@@ -4,22 +4,13 @@ declare(strict_types=1);
 
 namespace App\Invoice\UserInterface\Cli;
 
-use App\Invoice\Application\Command\AddInvoice;
 use App\Invoice\Application\Command\AddPayment;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
-use Symfony\Component\Console\Input\InputOption;
 
-#[AsCommand(
-    name: 'import:payments',
-    description: 'Import Payments.',
-    hidden: false,
-)]
 class ImportPaymentsCommand extends Command
 {
     public function __construct(
